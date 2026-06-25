@@ -1,0 +1,27 @@
+{
+  "name": "entrar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test_dev": "cross-env ENV_NAME=dev npx playwright test",
+    "test_dev_ui": "cross-env ENV_NAME=dev npx playwright test --ui",
+    "test_dev_cr_hd": "cross-env ENV_NAME=dev npx playwright test --project=chromium --headed",
+    "test_dev_cr_hl": "cross-env ENV_NAME=dev npx playwright test --project=chromium",
+    "test_dev_ff_hd": "cross-env ENV_NAME=dev npx playwright test --project=firefox --headed",
+    "test_dev_ff_hl": "cross-env ENV_NAME=dev npx playwright test --project=firefox"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.61.0",
+    "@types/crypto-js": "^4.2.2",
+    "@types/node": "~22.13.2"
+  },
+  "dependencies": {
+    "cross-env": "^10.1.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^17.4.2"
+  }
+}
