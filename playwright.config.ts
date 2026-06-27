@@ -37,38 +37,38 @@ export default defineConfig({
     // baseURL: 'http://localhost:3000',
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
-    screenshot: 'on',//only-on-failure
-    video: 'on',//retain-on-failure
-    trace: 'on',
+    screenshot: 'only-on-failure',//only-on-failure
+    video: 'retain-on-failure',//retain-on-failure
+    trace: 'retain-on-failure',
   },
 
   /* Configure projects for major browsers */
   projects: [
-    // {
-    //   name: 'setup',
-    //   testMatch: 'global.setup.ts'
-    // },
+    {
+      name: 'setup',
+      testMatch: 'global.setup.ts'
+    },
     {
       name: 'chromium',
-      // dependencies: ['setup'],
+      dependencies: ['setup'],
       use: { ...devices['Desktop Chrome'],
-        // storageState: './authenticator/.auth/auth.json'
+        storageState: './authenticator/.auth/auth.json'
       },
     },
 
     {
       name: 'firefox',
-      // dependencies: ['setup'],
+      dependencies: ['setup'],
       use: { ...devices['Desktop Firefox'],
-        // storageState: './authenticator/.auth/auth.json'
+        storageState: './authenticator/.auth/auth.json'
        },
     },
 
     {
       name: 'webkit',
-      // dependencies: ['setup'],
+      dependencies: ['setup'],
       use: { ...devices['Desktop Safari'],
-        // storageState: './authenticator/.auth/auth.json'
+        storageState: './authenticator/.auth/auth.json'
        },
     },
 

@@ -17,7 +17,6 @@ export default class CommonUtils{
 
     public encryptData(data: string){
         const encryptData = cryptoJs.AES.encrypt(data, this.secret_key).toString();
-        console.log(encryptData);
         return encryptData;
 
     }
