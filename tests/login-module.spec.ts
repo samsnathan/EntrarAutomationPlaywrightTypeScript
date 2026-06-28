@@ -28,13 +28,3 @@ test('[Login] Verify that the user cannot log in with both an invalid user name 
     await expect(loginPage.userNameInput).toBeVisible();
 
 })
-
-
-// test('[Login] Verify that the user cannot log in with both valid  user name and password ',async({gotoUrl, loginPage, commonUtils})=>{
-//     const userName = commonUtils.decryptData(process.env.USER_NAME!);
-//     const password = commonUtils.decryptData(process.env.PASSWORD!);
-//     await loginPage.loginEntrar(userName, password);
-//     await expect(loginPage.invalidCredentialsPopup).not.toHaveText(loginModuleData.invalidCredentialsPopup);
-//     await expect(loginPage.userNameInput).not.toBeVisible();
-
-// })
