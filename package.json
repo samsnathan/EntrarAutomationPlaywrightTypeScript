@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "pretest": "rimraf /test-results/.playwright-artifacts",
     "test_dev": "cross-env ENV_NAME=dev npx playwright test",
     "test_dev_ui": "cross-env ENV_NAME=dev npx playwright test --ui",
     "test_dev_cr_hd": "cross-env ENV_NAME=dev npx playwright test --project=chromium --headed",

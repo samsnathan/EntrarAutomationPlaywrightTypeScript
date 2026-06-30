@@ -8,18 +8,16 @@ test('Global Setup for Auto Login',async({page, loginPage,homePage, commonUtils,
     await loginPage.goToEntrar();
     await loginPage.loginEntrar(decryptedUserName, decryptedPassword);
     
-    
     await page.waitForURL('https://entrar.in/');
-    await(page.waitForTimeout(10000))
+    //await(page.waitForTimeout(10000))
     await expect(homePage.homePageTitleText).toHaveText('Class Diary');
-
-
 
     await page.context().storageState({
          path: './authenticator/.auth/auth.json'
      })
     
-    //await userPage.logout();
+    await userPage.logout();
+    await page.context().close();
 
      //await expect(page.getByRole('heading', { name: 'DELHI PUBLIC SCHOOL -' })).toHaveText('DELHI PUBLIC SCHOOL -');
     //getByRole('heading', { name: 'DELHI PUBLIC SCHOOL -' })

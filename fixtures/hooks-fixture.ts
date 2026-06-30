@@ -14,6 +14,7 @@ export const test = baseTest.extend<HooksFixtureType>({
     logout: async ({ userPage }, use: (r?: any) => Promise<void>) => {
         await use();
         await userPage.logout();
+        userPage.page.close();
     }
 })
 
