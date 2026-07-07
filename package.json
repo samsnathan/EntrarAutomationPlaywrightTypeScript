@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "pretest": "rimraf /test-results/.playwright-artifacts",
+    "pretest": "rimraf ./test-results/.playwright-artifacts-0 && rm -f ./test-results/.last-run.json",
     "test_dev": "cross-env ENV_NAME=dev npx playwright test",
     "test_dev_ui": "cross-env ENV_NAME=dev npx playwright test --ui",
     "test_dev_cr_hd": "cross-env ENV_NAME=dev npx playwright test --project=chromium --headed",
@@ -16,11 +16,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.61.0",
+    "@playwright/test": "^1.61.1",
     "@types/crypto-js": "^4.2.2",
     "@types/node": "~22.13.2"
   },
   "dependencies": {
+    "allure-playwright": "^3.10.2",
     "cross-env": "^10.1.0",
     "crypto-js": "^4.2.0",
     "dotenv": "^17.4.2"

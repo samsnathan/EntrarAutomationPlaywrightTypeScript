@@ -18,8 +18,4 @@ test('Global Setup for Auto Login',async({page, loginPage,homePage, commonUtils,
     
     await userPage.logout();
     await page.context().close();
-
-     //await expect(page.getByRole('heading', { name: 'DELHI PUBLIC SCHOOL -' })).toHaveText('DELHI PUBLIC SCHOOL -');
-    //getByRole('heading', { name: 'DELHI PUBLIC SCHOOL -' })
-
 })
